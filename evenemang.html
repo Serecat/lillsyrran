@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evenemang — Lillsyrran</title>
+  <meta name="description" content="Kommande evenemang och specialmenyer på Lillsyrran i Alingsås." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Header / Navigation ── -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Huvudnavigation">
+      <a href="index.html" class="nav-logo" aria-label="Lillsyrran – hem">Lillsyrran</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Öppna meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="meny.html">Meny</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="evenemang.html">Evenemang</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" aria-label="Evenemang">
+      <h1>Evenemang</h1>
+      <p>Nyheter, specialmenyer och trevliga tillställningar</p>
+    </section>
+
+    <!-- ── Events list ── -->
+    <section class="section" aria-label="Kommande evenemang">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Kommande</p>
+          <h2 class="section-title">Vad händer hos oss?</h2>
+          <div class="divider"></div>
+          <p class="section-desc">Vi håller dig uppdaterad om säsongsmenyer, tillfälliga specialerbjudanden och roliga nyheter.</p>
+        </div>
+
+        <div class="events-grid">
+
+          <article class="event-card">
+            <div class="event-date" aria-label="Datum">
+              <div class="day">1</div>
+              <div class="month">Maj</div>
+            </div>
+            <div class="event-info">
+              <p class="event-tag">Specialmeny</p>
+              <h3>Vårmeny lanseras</h3>
+              <p>
+                Till den 1 maj introducerar vi ett nytt smörrebröd med säsongens smaker — fräscht,
+                grönt och fullt av vår.  Kom in och smaka något nytt!
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date" aria-label="Datum">
+              <div class="day">17</div>
+              <div class="month">Maj</div>
+            </div>
+            <div class="event-info">
+              <p class="event-tag">Erbjudande</p>
+              <h3>Nationaldagserbjudande</h3>
+              <p>
+                Fira med oss! På nationaldagen bjuder vi på ett extra stort glasserbjudande till
+                alla som beställer dagens lunch. Gäller hela dagen, i mån av tillgång.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date" aria-label="Datum">
+              <div class="day">7</div>
+              <div class="month">Jun</div>
+            </div>
+            <div class="event-info">
+              <p class="event-tag">Nyhet</p>
+              <h3>Utökade öppettider</h3>
+              <p>
+                Under sommarmånaderna utökar vi öppettiderna på lördagar till 11:00–16:00. Mer tid
+                för en lugn lördagslunch med smörrebröd och ett glas kombucha.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date" aria-label="Datum">
+              <div class="day">15</div>
+              <div class="month">Aug</div>
+            </div>
+            <div class="event-info">
+              <p class="event-tag">Höstmeny</p>
+              <h3>Höstmeny &amp; nya smaker</h3>
+              <p>
+                I mitten av augusti byter vi ut delar av menyn för att välkomna höstens råvaror.
+                Håll utkik — det blir något riktigt gott!
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Newsletter / Follow CTA ── -->
+    <section class="section section-alt" aria-label="Håll dig uppdaterad">
+      <div class="container text-center">
+        <p class="section-label">Missa ingenting</p>
+        <h2 class="section-title">Håll dig uppdaterad</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Följ oss på sociala medier eller hör av dig direkt — vi berättar gärna vad som är på gång!
+        </p>
+        <div class="hero-cta mt-lg">
+          <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">Lillsyrran</p>
+          <p class="footer-tagline">smörrebröd &amp; annat gott</p>
+          <p class="footer-brand-desc">
+            En liten pärla i hjärtat av Alingsås — öppen för lunch och en kopp kaffe
+            när du behöver en paus i vardagen.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="meny.html">Meny</a></li>
+            <li><a href="om-oss.html">Om oss</a></li>
+            <li><a href="evenemang.html">Evenemang</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Öppettider</h4>
+          <p>Tisdag–Fredag: 11:00–15:00</p>
+          <p>Lördag: 11:00–15:00</p>
+          <p>Söndag–Måndag: Stängt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lillsyrran, Alingsås</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
