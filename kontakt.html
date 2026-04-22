@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Lillsyrran</title>
+  <meta name="description" content="Hitta oss i Alingsås. Telefon, e-post, adress och öppettider för Lillsyrran." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Header / Navigation ── -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Huvudnavigation">
+      <a href="index.html" class="nav-logo" aria-label="Lillsyrran – hem">Lillsyrran</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Öppna meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="meny.html">Meny</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="evenemang.html">Evenemang</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" aria-label="Kontakt">
+      <h1>Kontakt</h1>
+      <p>Vi ser fram emot ditt besök</p>
+    </section>
+
+    <!-- ── Contact info + map ── -->
+    <section class="section" aria-label="Kontaktinformation">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Left: info -->
+          <div class="contact-info">
+            <h2>Hitta oss</h2>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div class="contact-item-text">
+                <h4>Adress</h4>
+                <!-- TODO: uppdatera med faktisk adress -->
+                <p>[Gatuadress], Alingsås</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div class="contact-item-text">
+                <h4>Telefon</h4>
+                <!-- TODO: uppdatera med telefonnummer -->
+                <p><a href="tel:+46XXXXXXXXX">+46 XX XXX XX XX</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <div class="contact-item-text">
+                <h4>E-post</h4>
+                <!-- TODO: uppdatera med e-postadress -->
+                <p><a href="mailto:hej@lillsyrran.se">hej@lillsyrran.se</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">🕐</span>
+              <div class="contact-item-text">
+                <h4>Öppettider</h4>
+                <table class="hours-table" aria-label="Öppettider">
+                  <tbody>
+                    <tr>
+                      <td>Tisdag</td>
+                      <td>11:00–15:00</td>
+                    </tr>
+                    <tr>
+                      <td>Onsdag</td>
+                      <td>11:00–15:00</td>
+                    </tr>
+                    <tr>
+                      <td>Torsdag</td>
+                      <td>11:00–15:00</td>
+                    </tr>
+                    <tr>
+                      <td>Fredag</td>
+                      <td>11:00–15:00</td>
+                    </tr>
+                    <tr>
+                      <td>Lördag</td>
+                      <td>11:00–15:00</td>
+                    </tr>
+                    <tr>
+                      <td>Söndag</td>
+                      <td>Stängt</td>
+                    </tr>
+                    <tr>
+                      <td>Måndag</td>
+                      <td>Stängt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; display:flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="tel:+46XXXXXXXXX" class="btn btn-primary">Ring oss</a>
+              <a href="https://maps.google.com/?q=Alingsås" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Vägbeskrivning</a>
+            </div>
+          </div>
+
+          <!-- Right: map -->
+          <div>
+            <div class="map-container">
+              <div class="map-placeholder" role="img" aria-label="Kartvy över Lillsyrrans placering i Alingsås">
+                <span class="map-icon" aria-hidden="true">🗺️</span>
+                <p><strong>Alingsås</strong></p>
+                <!-- TODO: byt ut mot Google Maps-inbäddning när adressen är bekräftad -->
+                <p style="font-size:0.875rem;">Byt ut mot Google Maps-embed när adressen är klar.</p>
+                <a href="https://maps.google.com/?q=Alingsås" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;">Öppna i Google Maps</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Takeaway CTA ── -->
+    <section class="section section-alt" aria-label="Förbeställning">
+      <div class="container text-center">
+        <p class="section-label">Ta med dig maten</p>
+        <h2 class="section-title">Förbeställ takeaway</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Ring oss innan du kommer så förbereder vi din beställning. Obs: vid förbeställning gäller styckpris
+          (dagens erbjudande gäller ej).
+        </p>
+        <div class="hero-cta mt-lg">
+          <a href="tel:+46XXXXXXXXX" class="btn btn-primary">Ring och förbeställ</a>
+          <a href="meny.html" class="btn btn-outline">Se menyn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">Lillsyrran</p>
+          <p class="footer-tagline">smörrebröd &amp; annat gott</p>
+          <p class="footer-brand-desc">
+            En liten pärla i hjärtat av Alingsås — öppen för lunch och en kopp kaffe
+            när du behöver en paus i vardagen.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="meny.html">Meny</a></li>
+            <li><a href="om-oss.html">Om oss</a></li>
+            <li><a href="evenemang.html">Evenemang</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Öppettider</h4>
+          <p>Tisdag–Fredag: 11:00–15:00</p>
+          <p>Lördag: 11:00–15:00</p>
+          <p>Söndag–Måndag: Stängt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lillsyrran, Alingsås</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
