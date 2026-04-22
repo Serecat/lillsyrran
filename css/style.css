@@ -780,6 +780,30 @@ h1, h2, h3, h4 {
 }
 
 /* ==============================================
+   Instagram Feed Section
+   ============================================== */
+.instagram-section .section-desc a.instagram-handle {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.instagram-section .section-desc a.instagram-handle:hover {
+  color: var(--color-accent);
+}
+
+.instagram-embed-wrapper {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram-embed-wrapper .elfsight-app-placeholder {
+  width: 100%;
+}
+
+/* ==============================================
    Utilities
    ============================================== */
 .text-center { text-align: center; }
