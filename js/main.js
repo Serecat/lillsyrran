@@ -54,11 +54,14 @@
 
   if (track && prevBtn && nextBtn) {
     var currentIndex = 0;
+    var BREAKPOINT_SM = 768;
+    var BREAKPOINT_MD = 1024;
+    var GAP_PX = 4;
 
     function visibleCount() {
       var vw = window.innerWidth;
-      if (vw <= 768)  return 1;
-      if (vw <= 1024) return 2;
+      if (vw <= BREAKPOINT_SM)  return 1;
+      if (vw <= BREAKPOINT_MD) return 2;
       return 3;
     }
 
@@ -73,7 +76,7 @@
     function updateCarousel() {
       var slides    = track.querySelectorAll('.insta-slide');
       if (!slides.length) return;
-      var slideW    = slides[0].offsetWidth + 4; /* 4px gap */
+      var slideW    = slides[0].offsetWidth + GAP_PX;
       track.style.transform = 'translateX(-' + (currentIndex * slideW) + 'px)';
       prevBtn.disabled = currentIndex === 0;
       nextBtn.disabled = currentIndex >= maxIndex();
