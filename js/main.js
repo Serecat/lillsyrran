@@ -46,4 +46,61 @@
       link.classList.add('active');
     }
   });
+
+  /* ── Instagram photo carousel ── */
+  var track    = document.getElementById('instaTrack');
+  var prevBtn  = document.querySelector('.insta-arrow-prev');
+  var nextBtn  = document.querySelector('.insta-arrow-next');
+
+  if (track && prevBtn && nextBtn) {
+    var currentIndex = 0;
+    var BREAKPOINT_SM = 768;
+    var BREAKPOINT_MD = 1024;
+    var GAP_PX = 4;
+
+    function visibleCount() {
+      var vw = window.innerWidth;
+      if (vw <= BREAKPOINT_SM)  return 1;
+      if (vw <= BREAKPOINT_MD) return 2;
+      return 3;
+    }
+
+    function totalSlides() {
+      return track.querySelectorAll('.insta-slide').length;
+    }
+
+    function maxIndex() {
+      return Math.max(0, totalSlides() - visibleCount());
+    }
+
+    function updateCarousel() {
+      var slides    = track.querySelectorAll('.insta-slide');
+      if (!slides.length) return;
+      var slideW    = slides[0].offsetWidth + GAP_PX;
+      track.style.transform = 'translateX(-' + (currentIndex * slideW) + 'px)';
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= maxIndex();
+    }
+
+    prevBtn.addEventListener('click', function () {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
+        updateCarousel();
+      }
+    });
+
+    nextBtn.addEventListener('click', function () {
+      if (currentIndex < maxIndex()) {
+        currentIndex += 1;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      currentIndex = Math.min(currentIndex, maxIndex());
+      updateCarousel();
+    }, { passive: true });
+
+    updateCarousel();
+  }
 }());
