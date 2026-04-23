@@ -780,27 +780,116 @@ h1, h2, h3, h4 {
 }
 
 /* ==============================================
-   Instagram Feed Section
+   Instagram Photo Carousel
    ============================================== */
-.instagram-section .section-desc a.instagram-handle {
+.insta-carousel {
+  position: relative;
+  margin-top: var(--space-lg);
+  overflow: hidden;
+}
+
+.insta-viewport {
+  overflow: hidden;
+}
+
+.insta-track {
+  display: flex;
+  gap: 4px;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.insta-slide {
+  flex: 0 0 calc(33.333% - 3px);
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-border);
+}
+
+.insta-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.insta-slide:hover img {
+  transform: scale(1.04);
+}
+
+/* Arrow buttons */
+.insta-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(30, 18, 10, 0.55);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition), background-color var(--transition);
+  padding-bottom: 2px;
+}
+
+.insta-arrow:hover {
+  background-color: rgba(30, 18, 10, 0.8);
+}
+
+.insta-arrow-prev { left: 12px; }
+.insta-arrow-next { right: 12px; }
+
+.insta-carousel:hover .insta-arrow,
+.insta-arrow:focus-visible {
+  opacity: 1;
+}
+
+.insta-arrow:disabled {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Caption / Instagram link */
+.insta-caption {
+  text-align: center;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.insta-caption a {
   color: var(--color-primary);
   font-weight: 700;
 }
 
-.instagram-section .section-desc a.instagram-handle:hover {
+.insta-caption a:hover {
   color: var(--color-accent);
 }
 
-.instagram-embed-wrapper {
-  width: 100%;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 768px) {
+  .insta-slide {
+    flex: 0 0 calc(100% - 4px);
+  }
+
+  .insta-arrow {
+    opacity: 1;
+  }
 }
 
-.instagram-embed-wrapper [class^="elfsight-app-"] {
-  width: 100%;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .insta-slide {
+    flex: 0 0 calc(50% - 2px);
+  }
 }
 
 /* ==============================================
