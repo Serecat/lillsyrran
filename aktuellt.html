@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt — Lillsyrran</title>
-  <meta name="description" content="Hitta oss i Alingsås. Telefon, e-post, adress och öppettider för Lillsyrran." />
+  <title>Aktuellt — Lillsyrran</title>
+  <meta name="description" content="Aktuella nyheter, specialmenyer och evenemang på Lillsyrran i Alingsås." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -34,122 +34,118 @@
   <main>
 
     <!-- ── Page Hero ── -->
-    <section class="page-hero" aria-label="Kontakt">
-      <h1>Kontakt</h1>
-      <p>Vi ser fram emot ditt besök</p>
+    <section class="page-hero" aria-label="Aktuellt">
+      <h1>Aktuellt</h1>
+      <p>Nyheter, specialmenyer och trevliga tillställningar</p>
     </section>
 
-    <!-- ── Contact info + map ── -->
-    <section class="section" aria-label="Kontaktinformation">
+    <!-- ── Events list ── -->
+    <section class="section" aria-label="Aktuellt">
       <div class="container">
-        <div class="contact-grid">
+        <div class="section-header">
+          <p class="section-label">Senaste nytt</p>
+          <h2 class="section-title">Vad händer hos oss?</h2>
+          <div class="divider"></div>
+          <p class="section-desc">Vi håller dig uppdaterad om säsongsmenyer, tillfälliga specialerbjudanden och roliga nyheter.</p>
+        </div>
 
-          <!-- Left: info -->
-          <div class="contact-info">
-            <h2>Hitta oss</h2>
+        <div class="events-grid">
 
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">📍</span>
-              <div class="contact-item-text">
-                <h4>Adress</h4>
-                <!-- TODO: uppdatera med faktisk adress -->
-                <p>[Gatuadress], Alingsås</p>
+          <details class="event-card">
+            <summary>
+              <div class="event-date" aria-label="Datum">
+                <div class="day">1</div>
+                <div class="month">Maj</div>
               </div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">📞</span>
-              <div class="contact-item-text">
-                <h4>Telefon</h4>
-                <!-- TODO: uppdatera med telefonnummer -->
-                <p><a href="tel:+46XXXXXXXXX">+46 XX XXX XX XX</a></p>
+              <div class="event-info">
+                <p class="event-tag">Specialmeny</p>
+                <h3>Vårmeny lanseras</h3>
+                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
               </div>
+            </summary>
+            <div class="event-details-body">
+              <p>
+                Till den 1 maj introducerar vi ett nytt smörrebröd med säsongens smaker — fräscht,
+                grönt och fullt av vår. Kom in och smaka något nytt!
+              </p>
             </div>
+          </details>
 
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">✉️</span>
-              <div class="contact-item-text">
-                <h4>E-post</h4>
-                <!-- TODO: uppdatera med e-postadress -->
-                <p><a href="mailto:hej@lillsyrran.se">hej@lillsyrran.se</a></p>
+          <details class="event-card">
+            <summary>
+              <div class="event-date" aria-label="Datum">
+                <div class="day">17</div>
+                <div class="month">Maj</div>
               </div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">🕐</span>
-              <div class="contact-item-text">
-                <h4>Öppettider</h4>
-                <table class="hours-table" aria-label="Öppettider">
-                  <tbody>
-                    <tr>
-                      <td>Tisdag</td>
-                      <td>11:00–15:00</td>
-                    </tr>
-                    <tr>
-                      <td>Onsdag</td>
-                      <td>11:00–15:00</td>
-                    </tr>
-                    <tr>
-                      <td>Torsdag</td>
-                      <td>11:00–15:00</td>
-                    </tr>
-                    <tr>
-                      <td>Fredag</td>
-                      <td>11:00–15:00</td>
-                    </tr>
-                    <tr>
-                      <td>Lördag</td>
-                      <td>11:00–15:00</td>
-                    </tr>
-                    <tr>
-                      <td>Söndag</td>
-                      <td>Stängt</td>
-                    </tr>
-                    <tr>
-                      <td>Måndag</td>
-                      <td>Stängt</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="event-info">
+                <p class="event-tag">Erbjudande</p>
+                <h3>Nationaldagserbjudande</h3>
+                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
               </div>
+            </summary>
+            <div class="event-details-body">
+              <p>
+                Fira med oss! På nationaldagen bjuder vi på ett extra stort glasserbjudande till
+                alla som beställer dagens lunch. Gäller hela dagen, i mån av tillgång.
+              </p>
             </div>
+          </details>
 
-            <div style="margin-top: 2rem; display:flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="tel:+46XXXXXXXXX" class="btn btn-primary">Ring oss</a>
-              <a href="https://maps.google.com/?q=Alingsås" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Vägbeskrivning</a>
-            </div>
-          </div>
-
-          <!-- Right: map -->
-          <div>
-            <div class="map-container">
-              <div class="map-placeholder" role="img" aria-label="Kartvy över Lillsyrrans placering i Alingsås">
-                <span class="map-icon" aria-hidden="true">🗺️</span>
-                <p><strong>Alingsås</strong></p>
-                <!-- TODO: byt ut mot Google Maps-inbäddning när adressen är bekräftad -->
-                <p style="font-size:0.875rem;">Byt ut mot Google Maps-embed när adressen är klar.</p>
-                <a href="https://maps.google.com/?q=Alingsås" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;">Öppna i Google Maps</a>
+          <details class="event-card">
+            <summary>
+              <div class="event-date" aria-label="Datum">
+                <div class="day">7</div>
+                <div class="month">Jun</div>
               </div>
+              <div class="event-info">
+                <p class="event-tag">Nyhet</p>
+                <h3>Utökade öppettider</h3>
+                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
+              </div>
+            </summary>
+            <div class="event-details-body">
+              <p>
+                Under sommarmånaderna utökar vi öppettiderna på lördagar till 11:00–16:00. Mer tid
+                för en lugn lördagslunch med smörrebröd och ett glas kombucha.
+              </p>
             </div>
-          </div>
+          </details>
+
+          <details class="event-card">
+            <summary>
+              <div class="event-date" aria-label="Datum">
+                <div class="day">15</div>
+                <div class="month">Aug</div>
+              </div>
+              <div class="event-info">
+                <p class="event-tag">Höstmeny</p>
+                <h3>Höstmeny &amp; nya smaker</h3>
+                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
+              </div>
+            </summary>
+            <div class="event-details-body">
+              <p>
+                I mitten av augusti byter vi ut delar av menyn för att välkomna höstens råvaror.
+                Håll utkik — det blir något riktigt gott!
+              </p>
+            </div>
+          </details>
 
         </div>
       </div>
     </section>
 
-    <!-- ── Takeaway CTA ── -->
-    <section class="section section-alt" aria-label="Förbeställning">
+    <!-- ── Newsletter / Follow CTA ── -->
+    <section class="section section-alt" aria-label="Håll dig uppdaterad">
       <div class="container text-center">
-        <p class="section-label">Ta med dig maten</p>
-        <h2 class="section-title">Förbeställ takeaway</h2>
+        <p class="section-label">Missa ingenting</p>
+        <h2 class="section-title">Håll dig uppdaterad</h2>
         <div class="divider"></div>
         <p class="section-desc">
-          Ring oss innan du kommer så förbereder vi din beställning. Obs: vid förbeställning gäller styckpris
-          (dagens erbjudande gäller ej).
+          Följ oss på sociala medier eller hör av dig direkt — vi berättar gärna vad som är på gång!
         </p>
         <div class="hero-cta mt-lg">
-          <a href="tel:+46XXXXXXXXX" class="btn btn-primary">Ring och förbeställ</a>
-          <a href="meny.html" class="btn btn-outline">Se menyn</a>
+          <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
         </div>
       </div>
     </section>

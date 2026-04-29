@@ -61,8 +61,8 @@
     function visibleCount() {
       var vw = window.innerWidth;
       if (vw <= BREAKPOINT_SM)  return 1;
-      if (vw <= BREAKPOINT_MD) return 2;
-      return 3;
+      if (vw <= BREAKPOINT_MD) return 3;
+      return 4;
     }
 
     function totalSlides() {
