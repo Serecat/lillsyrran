@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;family=Lato:wght@300&amp;display=swap');
+      .logo-title { font-family: 'Pinyon Script', cursive; font-size: 128px; fill: #1a1a1a; }
+      .logo-sub   { font-family: 'Lato', sans-serif; font-size: 28px; font-weight: 300; fill: #1a1a1a; letter-spacing: 0.05em; }
+    </style>
+  </defs>
+  <text class="logo-title" x="400" y="148" text-anchor="middle" dominant-baseline="auto">Lillsyrran</text>
+  <text class="logo-sub"   x="400" y="196" text-anchor="middle">smörrebröd &amp; annat gott</text>
+</svg>
