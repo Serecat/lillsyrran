@@ -41,7 +41,8 @@ I CMS finns tre sektioner:
    - **Config path:** `admin/config.yml`
    - **Admin interface URL:** `https://<din-domän>/admin/`
 4. Kopiera **Site ID** från Turbos site-sida.
-5. Ersätt `REPLACE_WITH_YOUR_DECAP_TURBO_SITE_ID` i `admin/config.yml` med det riktiga värdet och deploya om sajten.
+5. Lägg in Site ID:t som Vercel-miljövariabeln `DECAP_TURBO_SITE_ID`.
+6. Deploya om sajten så att `/api/decap-config` kan lämna rätt `turbo_site_id` till `/admin/` vid inloggning.
 
 ### 3) Bjud in restaurangägaren
 1. Bjud in ägaren som editor i Decap Turbo.
@@ -50,6 +51,7 @@ I CMS finns tre sektioner:
 
 ### 4) Hur uppdateringar går live
 - CMS ändrar fortfarande `data/menu.json`, `data/events.json` och `data/site-settings.json`.
+- `/admin/` läser den vanliga samlingskonfigurationen från `admin/config.yml` och hämtar det deploy-specifika `turbo_site_id` från Vercel-funktionen `api/decap-config.js`.
 - När en editor klickar **Publish** skapar Turbo en commit i GitHub-repot.
 - Eftersom Vercel är kopplat till repot triggar committen automatiskt en ny deploy.
 - De statiska sidorna fortsätter läsa innehållet via `js/cms-content.js` utan att HTML-sidorna behöver ändras.

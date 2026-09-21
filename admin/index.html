@@ -6,6 +6,40 @@
   <title>Lillsyrran CMS</title>
 </head>
 <body>
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://unpkg.com/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      function showError(message) {
+        document.body.innerHTML = '<p>' + message + '</p>';
+      }
+
+      Promise.all([
+        fetch('/admin/config.yml', { cache: 'no-cache' }),
+        fetch('/api/decap-config', { cache: 'no-cache' })
+      ])
+        .then(function (responses) {
+          return Promise.all(responses.map(function (response) {
+            if (!response.ok) {
+              throw new Error('Kunde inte läsa CMS-konfigurationen.');
+            }
+            return response.headers.get('content-type') && response.headers.get('content-type').indexOf('application/json') !== -1
+              ? response.json()
+              : response.text();
+          }));
+        })
+        .then(function (results) {
+          var config = jsyaml.load(results[0]);
+          var runtimeConfig = results[1];
+
+          config.backend = Object.assign({}, config.backend, runtimeConfig.backend || {});
+          CMS.init({ config: config });
+        })
+        .catch(function () {
+          showError('CMS kunde inte startas. Kontrollera att Vercel-miljövariabeln DECAP_TURBO_SITE_ID är satt.');
+        });
+    }());
+  </script>
 </body>
 </html>
