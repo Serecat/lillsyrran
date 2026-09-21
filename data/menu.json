@@ -1,0 +1,109 @@
+{
+  "sections": [
+    {
+      "layout": "two_columns",
+      "title": "Smörrebröd",
+      "columns": [
+        {
+          "items": [
+          {
+            "name": "Räkor",
+            "description": "Ägg, caviar-ärt, majonnäs, riven pepparrot",
+            "price": "79 kr"
+          },
+          {
+            "name": "Rökt lax",
+            "description": "Asiatgurka, cavi-art, creme fraiche, picklade senapsfrön",
+            "price": "69 kr"
+          },
+          {
+            "name": "Panerad spättafilé",
+            "description": "Hemgjord remouladsås",
+            "price": "69 kr"
+          },
+          {
+            "name": "Inlagd sill",
+            "description": "Ägg, potatis, creme fraiche, lök, kapris",
+            "price": "59 kr"
+          },
+          {
+            "name": "Veterinärens nattamat",
+            "description": "Kalvleverpastej, saltkött, sky, lök",
+            "price": "65 kr"
+          },
+          {
+            "name": "Curry kyckling",
+            "description": "Currydressing, bacon",
+            "price": "65 kr"
+          },
+          {
+            "name": "Blå kornblomst",
+            "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
+            "price": "59 kr"
+          }
+          ]
+        },
+        {
+          "items": [
+          {
+            "name": "Rostbiff",
+            "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
+            "price": "72 kr"
+          },
+          {
+            "name": "Salami & Brie",
+            "description": "Dansk salami med brieost, fikonmarmelad",
+            "price": "65 kr"
+          }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "single_column",
+      "title": "Dryck",
+      "items": [
+        {
+          "name": "Kaffe",
+          "price": "38 kr"
+        },
+        {
+          "name": "Te",
+          "price": "20 kr"
+        },
+        {
+          "name": "Läsk / Lättöl",
+          "price": "25 kr"
+        },
+        {
+          "name": "Alkoholfri öl",
+          "price": "32 kr"
+        },
+        {
+          "name": "Kombucha",
+          "price": "60 kr"
+        },
+        {
+          "name": "Festis",
+          "price": "15 kr"
+        }
+      ]
+    },
+    {
+      "layout": "single_column",
+      "title": "Glass",
+      "items": [
+        {
+          "name": "Hollanders hantverksglass",
+          "description": "Finns i flera olika smaker!",
+          "price": "55 kr"
+        }
+      ]
+    }
+  ],
+  "offer": {
+    "title": "Dagens erbjudande",
+    "price": "139 kr",
+    "description": "Två av dagens smörrebröd inkl. läsk/lättöl, kaffe och kaka. Gäller tisdag–fredag. Vid förbeställning gäller styckpris."
+  }
+}

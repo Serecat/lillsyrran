@@ -1,0 +1,45 @@
+{
+  "contact": {
+    "address": "Kungsgatan 1, 441 30 Alingsås",
+    "phone": "+46 70 123 45 67",
+    "phoneLink": "tel:+46701234567",
+    "email": "hej@lillsyrran.se",
+    "emailLink": "mailto:hej@lillsyrran.se",
+    "mapLink": "https://maps.google.com/?q=Kungsgatan+1,+Alings%C3%A5s"
+  },
+  "openingHoursSummary": [
+    "Tisdag–Fredag: 11:00–15:00",
+    "Lördag: 11:00–15:00",
+    "Söndag–Måndag: Stängt"
+  ],
+  "openingHoursDetailed": [
+    {
+      "day": "Tisdag",
+      "hours": "11:00–15:00"
+    },
+    {
+      "day": "Onsdag",
+      "hours": "11:00–15:00"
+    },
+    {
+      "day": "Torsdag",
+      "hours": "11:00–15:00"
+    },
+    {
+      "day": "Fredag",
+      "hours": "11:00–15:00"
+    },
+    {
+      "day": "Lördag",
+      "hours": "11:00–15:00"
+    },
+    {
+      "day": "Söndag",
+      "hours": "Stängt"
+    },
+    {
+      "day": "Måndag",
+      "hours": "Stängt"
+    }
+  ]
+}

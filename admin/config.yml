@@ -1,0 +1,114 @@
+backend:
+  name: github
+  repo: Serecat/lillsyrran
+  branch: main
+  base_url: https://api.github.com
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: "sv"
+
+collections:
+  - name: "site_settings"
+    label: "Kontakt & öppettider"
+    files:
+      - file: "data/site-settings.json"
+        label: "Kontakt och öppettider"
+        name: "site_settings"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - label: "Kontakt"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Adress", name: "address", widget: "string" }
+              - { label: "Telefon (visning)", name: "phone", widget: "string" }
+              - { label: "Telefonlänk (tel:)", name: "phoneLink", widget: "string" }
+              - { label: "E-post", name: "email", widget: "string" }
+              - { label: "E-postlänk (mailto:)", name: "emailLink", widget: "string" }
+              - { label: "Kartlänk", name: "mapLink", widget: "string" }
+          - label: "Öppettider i sidfot"
+            name: "openingHoursSummary"
+            widget: "list"
+            field: { label: "Rad", name: "line", widget: "string" }
+          - label: "Detaljerade öppettider (Kontaktsidan)"
+            name: "openingHoursDetailed"
+            widget: "list"
+            fields:
+              - { label: "Dag", name: "day", widget: "string" }
+              - { label: "Tid", name: "hours", widget: "string" }
+
+  - name: "menu"
+    label: "Meny"
+    files:
+      - file: "data/menu.json"
+        label: "Menyinnehåll"
+        name: "menu"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - label: "Sektioner"
+            name: "sections"
+            widget: "list"
+            fields:
+              - label: "Sektionstyp"
+                name: "layout"
+                widget: "select"
+                options:
+                  - { label: "Två kolumner", value: "two_columns" }
+                  - { label: "En kolumn", value: "single_column" }
+              - { label: "Rubrik", name: "title", widget: "string" }
+              - label: "Kolumner (för tvåkolumnsektion)"
+                name: "columns"
+                widget: "list"
+                required: false
+                field:
+                  label: "Kolumn"
+                  widget: "object"
+                  fields:
+                    - label: "Rader"
+                      name: "items"
+                      widget: "list"
+                      fields:
+                        - { label: "Namn", name: "name", widget: "string" }
+                        - { label: "Beskrivning", name: "description", widget: "string", required: false }
+                        - { label: "Pris", name: "price", widget: "string" }
+              - label: "Rader (för enkel sektion)"
+                name: "items"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Namn", name: "name", widget: "string" }
+                  - { label: "Beskrivning", name: "description", widget: "string", required: false }
+                  - { label: "Pris", name: "price", widget: "string" }
+          - label: "Dagens erbjudande"
+            name: "offer"
+            widget: "object"
+            fields:
+              - { label: "Rubrik", name: "title", widget: "string" }
+              - { label: "Pris", name: "price", widget: "string" }
+              - { label: "Text", name: "description", widget: "text" }
+
+  - name: "events"
+    label: "Aktuellt"
+    files:
+      - file: "data/events.json"
+        label: "Evenemang"
+        name: "events"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - label: "Evenemang"
+            name: "events"
+            widget: "list"
+            fields:
+              - { label: "Dag", name: "day", widget: "string" }
+              - { label: "Månad", name: "month", widget: "string" }
+              - { label: "Tagg", name: "tag", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beskrivning", name: "description", widget: "text" }

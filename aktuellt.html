@@ -49,89 +49,7 @@
           <p class="section-desc">Vi håller dig uppdaterad om säsongsmenyer, tillfälliga specialerbjudanden och roliga nyheter.</p>
         </div>
 
-        <div class="events-grid">
-
-          <details class="event-card">
-            <summary>
-              <div class="event-date" aria-label="Datum">
-                <div class="day">1</div>
-                <div class="month">Maj</div>
-              </div>
-              <div class="event-info">
-                <p class="event-tag">Specialmeny</p>
-                <h3>Vårmeny lanseras</h3>
-                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
-              </div>
-            </summary>
-            <div class="event-details-body">
-              <p>
-                Till den 1 maj introducerar vi ett nytt smörrebröd med säsongens smaker — fräscht,
-                grönt och fullt av vår. Kom in och smaka något nytt!
-              </p>
-            </div>
-          </details>
-
-          <details class="event-card">
-            <summary>
-              <div class="event-date" aria-label="Datum">
-                <div class="day">17</div>
-                <div class="month">Maj</div>
-              </div>
-              <div class="event-info">
-                <p class="event-tag">Erbjudande</p>
-                <h3>Nationaldagserbjudande</h3>
-                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
-              </div>
-            </summary>
-            <div class="event-details-body">
-              <p>
-                Fira med oss! På nationaldagen bjuder vi på ett extra stort glasserbjudande till
-                alla som beställer dagens lunch. Gäller hela dagen, i mån av tillgång.
-              </p>
-            </div>
-          </details>
-
-          <details class="event-card">
-            <summary>
-              <div class="event-date" aria-label="Datum">
-                <div class="day">7</div>
-                <div class="month">Jun</div>
-              </div>
-              <div class="event-info">
-                <p class="event-tag">Nyhet</p>
-                <h3>Utökade öppettider</h3>
-                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
-              </div>
-            </summary>
-            <div class="event-details-body">
-              <p>
-                Under sommarmånaderna utökar vi öppettiderna på lördagar till 11:00–16:00. Mer tid
-                för en lugn lördagslunch med smörrebröd och ett glas kombucha.
-              </p>
-            </div>
-          </details>
-
-          <details class="event-card">
-            <summary>
-              <div class="event-date" aria-label="Datum">
-                <div class="day">15</div>
-                <div class="month">Aug</div>
-              </div>
-              <div class="event-info">
-                <p class="event-tag">Höstmeny</p>
-                <h3>Höstmeny &amp; nya smaker</h3>
-                <span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span>
-              </div>
-            </summary>
-            <div class="event-details-body">
-              <p>
-                I mitten av augusti byter vi ut delar av menyn för att välkomna höstens råvaror.
-                Håll utkik — det blir något riktigt gott!
-              </p>
-            </div>
-          </details>
-
-        </div>
+        <div class="events-grid" id="events-list"></div>
       </div>
     </section>
 
@@ -177,9 +95,11 @@
         </div>
         <div class="footer-col">
           <h4>Öppettider</h4>
-          <p>Tisdag–Fredag: 11:00–15:00</p>
-          <p>Lördag: 11:00–15:00</p>
-          <p>Söndag–Måndag: Stängt</p>
+          <div data-cms-footer-hours>
+            <p>Tisdag–Fredag: 11:00–15:00</p>
+            <p>Lördag: 11:00–15:00</p>
+            <p>Söndag–Måndag: Stängt</p>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Följ oss</h4>
@@ -202,5 +122,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/cms-content.js"></script>
 </body>
 </html>

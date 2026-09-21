@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "day": "1",
+      "month": "Maj",
+      "tag": "Specialmeny",
+      "title": "Vårmeny lanseras",
+      "description": "Till den 1 maj introducerar vi ett nytt smörrebröd med säsongens smaker — fräscht, grönt och fullt av vår. Kom in och smaka något nytt!"
+    },
+    {
+      "day": "6",
+      "month": "Jun",
+      "tag": "Erbjudande",
+      "title": "Nationaldagserbjudande",
+      "description": "Fira med oss! På nationaldagen bjuder vi på ett extra stort glasserbjudande till alla som beställer dagens lunch. Gäller hela dagen, i mån av tillgång."
+    },
+    {
+      "day": "7",
+      "month": "Jun",
+      "tag": "Nyhet",
+      "title": "Utökade öppettider",
+      "description": "Under sommarmånaderna utökar vi öppettiderna på lördagar till 11:00–16:00. Mer tid för en lugn lördagslunch med smörrebröd och ett glas kombucha."
+    },
+    {
+      "day": "15",
+      "month": "Aug",
+      "tag": "Höstmeny",
+      "title": "Höstmeny & nya smaker",
+      "description": "I mitten av augusti byter vi ut delar av menyn för att välkomna höstens råvaror. Håll utkik — det blir något riktigt gott!"
+    }
+  ]
+}
