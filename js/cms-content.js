@@ -56,6 +56,9 @@
 
     callLinks.forEach(function (link) {
       link.setAttribute('href', contact.phoneLink || '#');
+      if (contact.phone) {
+        link.setAttribute('aria-label', 'Ring oss: ' + contact.phone);
+      }
     });
 
     if (email) {
@@ -65,6 +68,9 @@
 
     mapLinks.forEach(function (link) {
       link.setAttribute('href', contact.mapLink || '#');
+      if (contact.address) {
+        link.setAttribute('aria-label', 'Vägbeskrivning till ' + contact.address);
+      }
     });
 
     var hoursBody = document.getElementById('hours-table-body');
@@ -121,7 +127,7 @@
     if (!container || !eventsData || !Array.isArray(eventsData.events)) return;
 
     container.innerHTML = eventsData.events.map(function (event) {
-      return '<details class="event-card"><summary><div class="event-date" aria-label="Datum"><div class="day">' + escapeHtml(event.day) + '</div><div class="month">' + escapeHtml(event.month) + '</div></div><div class="event-info"><p class="event-tag">' + escapeHtml(event.tag) + '</p><h3>' + escapeHtml(event.title) + '</h3><span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span></div></summary><div class="event-details-body"><p>' + escapeHtml(event.description) + '</p></div></details>';
+      return '<details class="event-card"><summary><div class="event-date" aria-label="Datum"><div class="day">' + escapeHtml(event.day) + '</div><div class="month">' + escapeHtml(event.month) + '</div></div><div class="event-info"><p class="event-tag">' + escapeHtml(event.tag) + '</p><h3>' + escapeHtml(event.title) + '</h3><span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span></div></summary><div class="event-details-body"><p>' + escapeHtmlWithLineBreaks(event.description) + '</p></div></details>';
     }).join('');
   }
 
