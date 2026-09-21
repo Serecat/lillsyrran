@@ -19,7 +19,7 @@ I CMS finns tre sektioner:
 
 ### 3) Publicera
 - Tryck **Publish** i CMS.
-- Ändringen sparas i GitHub och visas på webbplatsen efter deploy.
+- Ändringen sparas i GitHub och visas på webbplatsen så snart GitHub Pages/hosting har uppdaterat (oftast inom någon minut).
 
 ## Teknisk översikt
 

@@ -145,6 +145,9 @@
   if (needsSettings) {
     loaders.push(
       fetchJson('data/site-settings.json').then(function (settings) {
+        if (!settings || typeof settings !== 'object') {
+          return;
+        }
         renderFooterHours(settings.openingHoursSummary);
         renderContact(settings);
       })
