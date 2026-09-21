@@ -22,14 +22,14 @@
         fetch('/api/decap-config', { cache: 'no-cache' })
       ])
         .then(function (responses) {
-          return Promise.all(responses.map(function (response) {
-            if (!response.ok) {
-              throw new Error('Kunde inte läsa CMS-konfigurationen.');
-            }
-            return response.headers.get('content-type') && response.headers.get('content-type').indexOf('application/json') !== -1
-              ? response.json()
-              : response.text();
-          }));
+          if (!responses[0].ok || !responses[1].ok) {
+            throw new Error('Kunde inte läsa CMS-konfigurationen.');
+          }
+
+          return Promise.all([
+            responses[0].text(),
+            responses[1].json()
+          ]);
         })
         .then(function (results) {
           var config = jsyaml.load(results[0]);
@@ -38,8 +38,8 @@
           config.backend = Object.assign({}, config.backend, runtimeConfig.backend || {});
           CMS.init({ config: config });
         })
-        .catch(function () {
-          showError('CMS kunde inte startas. Kontrollera att Vercel-miljövariabeln DECAP_TURBO_SITE_ID är satt.');
+        .catch(function (error) {
+          showError(error && error.message ? error.message : 'CMS kunde inte startas. Kontrollera konfigurationen och försök igen.');
         });
     }());
   </script>
