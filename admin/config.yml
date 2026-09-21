@@ -68,11 +68,15 @@ collections:
                 required: false
                 field:
                   label: "Kolumn"
-                  widget: "list"
+                  widget: "object"
                   fields:
-                    - { label: "Namn", name: "name", widget: "string" }
-                    - { label: "Beskrivning", name: "description", widget: "string", required: false }
-                    - { label: "Pris", name: "price", widget: "string" }
+                    - label: "Rader"
+                      name: "items"
+                      widget: "list"
+                      fields:
+                        - { label: "Namn", name: "name", widget: "string" }
+                        - { label: "Beskrivning", name: "description", widget: "string", required: false }
+                        - { label: "Pris", name: "price", widget: "string" }
               - label: "Rader (för enkel sektion)"
                 name: "items"
                 widget: "list"

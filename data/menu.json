@@ -4,7 +4,8 @@
       "layout": "two_columns",
       "title": "Smörrebröd",
       "columns": [
-        [
+        {
+          "items": [
           {
             "name": "Räkor",
             "description": "Ägg, caviar-ärt, majonnäs, riven pepparrot",
@@ -40,8 +41,10 @@
             "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
             "price": "59 kr"
           }
-        ],
-        [
+          ]
+        },
+        {
+          "items": [
           {
             "name": "Rostbiff",
             "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
@@ -52,7 +55,8 @@
             "description": "Dansk salami med brieost, fikonmarmelad",
             "price": "65 kr"
           }
-        ]
+          ]
+        }
       ]
     },
     {

@@ -89,11 +89,12 @@
       var heading = '<h2 class="menu-section-title">' + escapeHtml(section.title) + '</h2>';
 
       if (section.layout === 'two_columns' && Array.isArray(section.columns)) {
-        var columnsHtml = section.columns.map(function (items) {
-          return '<div class="menu-items">' + (Array.isArray(items) ? items.map(function (item) {
+        var columnsHtml = section.columns.map(function (column) {
+          var items = column && Array.isArray(column.items) ? column.items : [];
+          return '<div class="menu-items">' + items.map(function (item) {
             var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
             return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
-          }).join('') : '') + '</div>';
+          }).join('') + '</div>';
         }).join('');
 
         return '<div class="menu-section">' + heading + '<div class="menu-two-col">' + columnsHtml + '</div></div>';
@@ -115,10 +116,13 @@
 
     var offerContainer = document.getElementById('menu-offer');
     if (offerContainer && menuData.offer) {
+      offerContainer.hidden = false;
       offerContainer.innerHTML =
         '<h3>' + escapeHtml(menuData.offer.title) + '</h3>' +
         '<p class="offer-price-small">' + escapeHtml(menuData.offer.price) + '</p>' +
         '<p>' + escapeHtmlWithLineBreaks(menuData.offer.description) + '</p>';
+    } else if (offerContainer) {
+      offerContainer.hidden = true;
     }
   }
 
