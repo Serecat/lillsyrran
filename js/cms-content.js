@@ -153,7 +153,9 @@
     loaders.push(fetchJson('data/events.json').then(renderEvents));
   }
 
-  Promise.allSettled(loaders).then(function () {
-    /* no-op */
-  });
+  Promise.all(loaders.map(function (loader) {
+    return loader.catch(function () {
+      return null;
+    });
+  }));
 }());

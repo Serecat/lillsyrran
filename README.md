@@ -7,7 +7,7 @@ Statisk hemsida för Lillsyrran med redigering via Decap CMS.
 ### 1) Logga in i CMS
 1. Gå till `/admin/` på hemsidan (exempel: `https://<din-domän>/admin/`).
 2. Logga in med GitHub-konto.
-3. Endast användare med skrivbehörighet i repot kan publicera ändringar.
+3. Endast användare med skrivbehörighet i repo kan publicera ändringar.
 
 > Tips: Ge bara familjemedlemmar/collaborators access i GitHub för att skydda admin-delen.
 
