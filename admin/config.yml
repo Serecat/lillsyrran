@@ -62,7 +62,6 @@ collections:
                 required: false
                 field:
                   label: "Kolumn"
-                  name: "items"
                   widget: "list"
                   fields:
                     - { label: "Namn", name: "name", widget: "string" }
