@@ -1,8 +1,7 @@
 backend:
-  name: github
-  repo: Serecat/lillsyrran
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_YOUR_DECAP_TURBO_SITE_ID
   branch: main
-  base_url: https://api.github.com
 
 media_folder: "images"
 public_folder: "/images"
