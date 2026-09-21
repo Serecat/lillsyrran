@@ -20,6 +20,10 @@
       .replace(/'/g, '&#039;');
   }
 
+  function escapeHtmlWithLineBreaks(value) {
+    return escapeHtml(value).replace(/\r?\n/g, '<br>');
+  }
+
   function renderFooterHours(lines) {
     var containers = document.querySelectorAll('[data-cms-footer-hours]');
     if (!containers.length || !Array.isArray(lines)) return;
@@ -78,7 +82,7 @@
     var html = menuData.sections.map(function (section) {
       var heading = '<h2 class="menu-section-title">' + escapeHtml(section.title) + '</h2>';
 
-      if (Array.isArray(section.columns)) {
+      if (section.layout === 'two_columns' && Array.isArray(section.columns)) {
         var columnsHtml = section.columns.map(function (items) {
           return '<div class="menu-items">' + (Array.isArray(items) ? items.map(function (item) {
             var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
@@ -89,7 +93,7 @@
         return '<div class="menu-section">' + heading + '<div class="menu-two-col">' + columnsHtml + '</div></div>';
       }
 
-      if (Array.isArray(section.items)) {
+      if (section.layout === 'single_column' && Array.isArray(section.items)) {
         var itemsHtml = section.items.map(function (item) {
           var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
           return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
@@ -108,7 +112,7 @@
       offerContainer.innerHTML =
         '<h3>' + escapeHtml(menuData.offer.title) + '</h3>' +
         '<p class="offer-price-small">' + escapeHtml(menuData.offer.price) + '</p>' +
-        '<p>' + escapeHtml(menuData.offer.description) + '</p>';
+        '<p>' + escapeHtmlWithLineBreaks(menuData.offer.description) + '</p>';
     }
   }
 
@@ -121,26 +125,35 @@
     }).join('');
   }
 
-  Promise.allSettled([
-    fetchJson('data/site-settings.json'),
-    fetchJson('data/menu.json'),
-    fetchJson('data/events.json')
-  ]).then(function (results) {
-    var settingsResult = results[0];
-    var menuResult = results[1];
-    var eventsResult = results[2];
+  var needsSettings =
+    document.querySelector('[data-cms-footer-hours]') ||
+    document.getElementById('cms-contact-address') ||
+    document.getElementById('hours-table-body') ||
+    document.querySelector('[data-cms-call-link]') ||
+    document.querySelector('[data-cms-map-link]');
+  var needsMenu = document.getElementById('menu-sections') || document.getElementById('menu-offer');
+  var needsEvents = document.getElementById('events-list');
 
-    if (settingsResult.status === 'fulfilled') {
-      renderFooterHours(settingsResult.value.openingHoursSummary);
-      renderContact(settingsResult.value);
-    }
+  var loaders = [];
 
-    if (menuResult.status === 'fulfilled') {
-      renderMenu(menuResult.value);
-    }
+  if (needsSettings) {
+    loaders.push(
+      fetchJson('data/site-settings.json').then(function (settings) {
+        renderFooterHours(settings.openingHoursSummary);
+        renderContact(settings);
+      })
+    );
+  }
 
-    if (eventsResult.status === 'fulfilled') {
-      renderEvents(eventsResult.value);
-    }
+  if (needsMenu) {
+    loaders.push(fetchJson('data/menu.json').then(renderMenu));
+  }
+
+  if (needsEvents) {
+    loaders.push(fetchJson('data/events.json').then(renderEvents));
+  }
+
+  Promise.allSettled(loaders).then(function () {
+    /* no-op */
   });
 }());

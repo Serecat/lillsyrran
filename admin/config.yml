@@ -55,6 +55,12 @@ collections:
             name: "sections"
             widget: "list"
             fields:
+              - label: "Sektionstyp"
+                name: "layout"
+                widget: "select"
+                options:
+                  - { label: "Två kolumner", value: "two_columns" }
+                  - { label: "En kolumn", value: "single_column" }
               - { label: "Rubrik", name: "title", widget: "string" }
               - label: "Kolumner (för tvåkolumnsektion)"
                 name: "columns"
