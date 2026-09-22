@@ -385,7 +385,7 @@ h1, h2, h3, h4 {
    ============================================== */
 .menu-preview-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
 }
@@ -1059,11 +1059,5 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1240px) {
-  .menu-preview-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
