@@ -212,8 +212,9 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../images/hero-bg.jpg') center / cover no-repeat;
-  opacity: 0.35;
+  background: linear-gradient(rgba(18, 10, 6, 0.62), rgba(18, 10, 6, 0.62)),
+    url('../images/lillsyrranhomepage.jpg') center / cover no-repeat;
+  opacity: 1;
 }
 
 .hero-content {
@@ -384,7 +385,7 @@ h1, h2, h3, h4 {
    ============================================== */
 .menu-preview-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
 }
