@@ -1061,3 +1061,9 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
     gap: var(--space-md);
   }
 }
+
+@media (min-width: 1025px) and (max-width: 1240px) {
+  .menu-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
