@@ -6,6 +6,42 @@
   <title>Lillsyrran CMS</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.4.0/dist/decap-cms.js"></script>
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="https://unpkg.com/decap-cms@3.17.0-beta.0/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      function showError(message) {
+        var paragraph = document.createElement('p');
+        paragraph.textContent = message;
+        document.body.replaceChildren(paragraph);
+      }
+
+      Promise.all([
+        fetch('/admin/config.yml', { cache: 'no-cache' }),
+        fetch('/api/decap-config', { cache: 'no-cache' })
+      ])
+        .then(function (responses) {
+          if (!responses[0].ok || !responses[1].ok) {
+            throw new Error('Kunde inte läsa CMS-konfigurationen.');
+          }
+
+          return Promise.all([
+            responses[0].text(),
+            responses[1].json()
+          ]);
+        })
+        .then(function (results) {
+          var config = jsyaml.load(results[0]);
+          var runtimeConfig = results[1];
+
+          config.backend = Object.assign({}, config.backend, runtimeConfig.backend || {});
+          CMS.init({ config: config });
+        })
+        .catch(function (error) {
+          showError(error && error.message ? error.message : 'CMS kunde inte startas. Kontrollera konfigurationen och försök igen.');
+        });
+    }());
+  </script>
 </body>
 </html>
