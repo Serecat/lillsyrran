@@ -68,6 +68,9 @@
               <span class="contact-icon" aria-hidden="true">🕐</span>
               <div class="contact-item-text">
                 <h4>Öppettider</h4>
+                <div data-cms-footer-hours>
+                  <p>Tisdag–Lördag: 11:00–15:00</p>
+                </div>
                 <table class="hours-table" aria-label="Öppettider">
                   <tbody id="hours-table-body"></tbody>
                 </table>
@@ -83,13 +86,13 @@
           <!-- Right: map -->
           <div>
             <div class="map-container">
-              <div class="map-placeholder" role="img" aria-label="Kartvy över Lillsyrrans placering i Alingsås">
-                <span class="map-icon" aria-hidden="true">🗺️</span>
-                <p><strong>Alingsås</strong></p>
-                <!-- TODO: byt ut mot Google Maps-inbäddning när adressen är bekräftad -->
-                <p style="font-size:0.875rem;">Byt ut mot Google Maps-embed när adressen är klar.</p>
-                <a href="https://maps.google.com/?q=Alingsås" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;" data-cms-map-link>Öppna i Google Maps</a>
-              </div>
+              <iframe
+                src="https://www.google.com/maps?q=Stora+Torget+4,+441+30+Alings%C3%A5s&amp;output=embed"
+                title="Karta över Lillsyrran, Stora Torget 4 i Alingsås"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
 
