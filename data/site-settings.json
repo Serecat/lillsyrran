@@ -6,7 +6,9 @@
     "mapLink": "https://maps.google.com/?q=Stora+Torget+4,+441+30+Alings%C3%A5s"
   },
   "openingHoursSummary": [
-    "Tisdag–Lördag: 11:00–15:00"
+    "Tisdag–Fredag: 11:00–15:00",
+    "Lördag: 11:00–15:00",
+    "Söndag–Måndag: Stängt"
   ],
   "openingHoursDetailed": [
     {
