@@ -25,8 +25,6 @@ collections:
               - { label: "Adress", name: "address", widget: "string" }
               - { label: "Telefon (visning)", name: "phone", widget: "string" }
               - { label: "Telefonlänk (tel:)", name: "phoneLink", widget: "string" }
-              - { label: "E-post", name: "email", widget: "string" }
-              - { label: "E-postlänk (mailto:)", name: "emailLink", widget: "string" }
               - { label: "Kartlänk", name: "mapLink", widget: "string" }
           - label: "Öppettider i sidfot"
             name: "openingHoursSummary"
