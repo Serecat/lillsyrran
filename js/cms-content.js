@@ -41,7 +41,6 @@
     var contact = settings.contact;
     var address = document.getElementById('cms-contact-address');
     var phone = document.getElementById('cms-contact-phone');
-    var email = document.getElementById('cms-contact-email');
     var mapLinks = document.querySelectorAll('[data-cms-map-link]');
     var callLinks = document.querySelectorAll('[data-cms-call-link]');
 
@@ -60,11 +59,6 @@
         link.setAttribute('aria-label', 'Ring oss: ' + contact.phone);
       }
     });
-
-    if (email) {
-      email.textContent = contact.email || '';
-      email.setAttribute('href', contact.emailLink || '#');
-    }
 
     mapLinks.forEach(function (link) {
       link.setAttribute('href', contact.mapLink || '#');
