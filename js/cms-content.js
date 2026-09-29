@@ -120,6 +120,12 @@
     }
   }
 
+  function setHidden(el, hide) {
+    if (!el) return;
+    el.hidden = hide;
+    el.classList.toggle('is-hidden', hide);
+  }
+
   function renderEvents(eventsData) {
     var events = eventsData && Array.isArray(eventsData.events)
       ? eventsData.events.filter(function (event) {
@@ -129,19 +135,23 @@
     var hasEvents = events.length > 0;
     var container = document.getElementById('events-list');
     var eventLinks = document.querySelectorAll('a[href="aktuellt.html"]');
-    var teaser = document.querySelector('[data-events-teaser]');
-    var eventsPage = document.querySelector('[data-events-page]');
+    var teasers = document.querySelectorAll('[data-events-teaser]');
+    var eventsPages = document.querySelectorAll('[data-events-page]');
+    var eventsCtas = document.querySelectorAll('[data-events-cta]');
 
     eventLinks.forEach(function (link) {
       var listItem = link.closest('li');
-      if (listItem) {
-        listItem.hidden = !hasEvents;
-      } else {
-        link.hidden = !hasEvents;
-      }
+      setHidden(listItem || link, !hasEvents);
     });
-    if (teaser) teaser.hidden = !hasEvents;
-    if (eventsPage) eventsPage.hidden = !hasEvents;
+    eventsCtas.forEach(function (cta) {
+      setHidden(cta, !hasEvents);
+    });
+    teasers.forEach(function (teaser) {
+      setHidden(teaser, !hasEvents);
+    });
+    eventsPages.forEach(function (eventsPage) {
+      setHidden(eventsPage, !hasEvents);
+    });
     if (!container) return;
 
     container.innerHTML = events.map(function (event) {
@@ -158,7 +168,10 @@
   var needsMenu = document.getElementById('menu-sections') || document.getElementById('menu-offer');
   var needsEvents =
     document.getElementById('events-list') ||
-    document.querySelector('a[href="aktuellt.html"]');
+    document.querySelector('a[href="aktuellt.html"]') ||
+    document.querySelector('[data-events-teaser]') ||
+    document.querySelector('[data-events-page]') ||
+    document.querySelector('[data-events-cta]');
 
   var loaders = [];
 
