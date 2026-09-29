@@ -127,10 +127,30 @@
   }
 
   function renderEvents(eventsData) {
+    var events = eventsData && Array.isArray(eventsData.events)
+      ? eventsData.events.filter(function (event) {
+          return event && typeof event === 'object' && String(event.title || '').trim();
+        })
+      : [];
+    var hasEvents = events.length > 0;
     var container = document.getElementById('events-list');
-    if (!container || !eventsData || !Array.isArray(eventsData.events)) return;
+    var eventLinks = document.querySelectorAll('a[href="aktuellt.html"]');
+    var teaser = document.querySelector('[data-events-teaser]');
+    var eventsPage = document.querySelector('[data-events-page]');
 
-    container.innerHTML = eventsData.events.map(function (event) {
+    eventLinks.forEach(function (link) {
+      var listItem = link.closest('li');
+      if (listItem) {
+        listItem.hidden = !hasEvents;
+      } else {
+        link.hidden = !hasEvents;
+      }
+    });
+    if (teaser) teaser.hidden = !hasEvents;
+    if (eventsPage) eventsPage.hidden = !hasEvents;
+    if (!container) return;
+
+    container.innerHTML = events.map(function (event) {
       return '<details class="event-card"><summary><div class="event-date" aria-label="Datum"><div class="day">' + escapeHtml(event.day) + '</div><div class="month">' + escapeHtml(event.month) + '</div></div><div class="event-info"><p class="event-tag">' + escapeHtml(event.tag) + '</p><h3>' + escapeHtml(event.title) + '</h3><span class="event-summary-toggle">Läs mer <i class="toggle-icon">▾</i></span></div></summary><div class="event-details-body"><p>' + escapeHtmlWithLineBreaks(event.description) + '</p></div></details>';
     }).join('');
   }
@@ -142,7 +162,9 @@
     document.querySelector('[data-cms-call-link]') ||
     document.querySelector('[data-cms-map-link]');
   var needsMenu = document.getElementById('menu-sections') || document.getElementById('menu-offer');
-  var needsEvents = document.getElementById('events-list');
+  var needsEvents =
+    document.getElementById('events-list') ||
+    document.querySelector('a[href="aktuellt.html"]');
 
   var loaders = [];
 
@@ -163,7 +185,12 @@
   }
 
   if (needsEvents) {
-    loaders.push(fetchJson('data/events.json').then(renderEvents));
+    loaders.push(
+      fetchJson('data/events.json').then(renderEvents).catch(function () {
+        renderEvents({ events: [] });
+        return null;
+      })
+    );
   }
 
   Promise.all(loaders.map(function (loader) {
