@@ -171,6 +171,12 @@ h1, h2, h3, h4 {
   color: var(--color-primary);
 }
 
+.hero .btn-primary:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);
@@ -385,7 +391,7 @@ h1, h2, h3, h4 {
    ============================================== */
 .menu-preview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
 }
@@ -1029,9 +1035,7 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
     grid-template-columns: 1fr;
   }
 
-  .menu-preview-grid {
-    grid-template-columns: 1fr;
-  }
+  .menu-preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .values-grid {
     grid-template-columns: 1fr;
@@ -1048,10 +1052,6 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .menu-preview-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
