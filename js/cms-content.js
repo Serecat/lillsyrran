@@ -152,6 +152,9 @@
     eventsPages.forEach(function (eventsPage) {
       setHidden(eventsPage, !hasEvents);
     });
+    if (!hasEvents && /(?:^|\/)aktuellt\.html$/.test(window.location.pathname)) {
+      window.location.replace('index.html');
+    }
     if (!container) return;
 
     container.innerHTML = events.map(function (event) {

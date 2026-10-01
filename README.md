@@ -49,6 +49,9 @@ I CMS finns tre sektioner:
 2. Ägaren går sedan till `https://<din-domän>/admin/`.
 3. Ägaren loggar in med e-post/lösenord via Turbo och kan därefter redigera meny, evenemang och kontaktuppgifter utan GitHub.
 
+### Netlify Identity
+Admin-gränssnittet laddar även Netlify Identity-widgeten för Netlify Identity-inbjudningar och kontoaktivering. För denna inloggningsväg behöver Netlify Identity och Git Gateway vara aktiverade för sajten; skicka en inbjudan från Netlify Identity så att ägaren kan följa aktiveringslänken och välja ett lösenord.
+
 ### 4) Hur uppdateringar går live
 - CMS ändrar fortfarande `data/menu.json`, `data/events.json` och `data/site-settings.json`.
 - `/admin/` läser den vanliga samlingskonfigurationen från `admin/config.yml` och hämtar det deploy-specifika `turbo_site_id` från Vercel-funktionen `api/decap-config.js`.
