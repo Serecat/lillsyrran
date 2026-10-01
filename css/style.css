@@ -98,7 +98,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-logo img {
-  height: 52px;
+  height: 60px;
   width: auto;
   display: block;
   /* Make white bg transparent on light header */
@@ -763,7 +763,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-logo-img {
-  height: 72px;
+  height: 80px;
   width: auto;
   /* Invert to white on dark footer background */
   filter: invert(1);
@@ -1028,6 +1028,10 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
    Responsive
    ============================================== */
 @media (max-width: 768px) {
+  .nav-logo img {
+    height: 54px;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -1062,6 +1066,10 @@ details.event-card[open] .toggle-icon { transform: rotate(180deg); }
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .footer-logo-img {
+    height: 76px;
   }
 
   .event-card {
