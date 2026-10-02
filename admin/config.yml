@@ -58,41 +58,30 @@ collections:
                 name: "layout"
                 widget: "select"
                 default: "single_column"
-                hint: "Välj 'En kolumn' för en vanlig lista, eller 'Två kolumner' för att dela upp raderna i två kolumner bredvid varandra."
+                hint: "Välj 'En kolumn' för en vanlig lista, eller 'Två kolumner' för att dela upp samma rader i två kolumner bredvid varandra. Raderna redigeras alltid på samma ställe."
                 options:
                   - { label: "Två kolumner", value: "two_columns" }
                   - { label: "En kolumn", value: "single_column" }
               - { label: "Sektionens rubrik", name: "title", widget: "string", hint: "T.ex. Smörrebröd eller Dryck." }
-              - label: "Kolumner (fyll i endast om du valt Två kolumner)"
-                name: "columns"
-                widget: "list"
-                required: false
-                label_singular: "kolumn"
-                hint: "Lägg till två kolumner och fyll i maträtterna i varje."
-                field:
-                  label: "Kolumn"
-                  name: "column"
-                  widget: "object"
-                  fields:
-                    - label: "Maträtter / produkter"
-                      name: "items"
-                      widget: "list"
-                      label_singular: "rad"
-                      summary: "{{fields.name}} – {{fields.price}}"
-                      fields:
-                        - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
-                        - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
-                        - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
-              - label: "Maträtter / produkter (fyll i endast om du valt En kolumn)"
+              - label: "Maträtter / produkter"
                 name: "items"
                 widget: "list"
                 required: false
                 label_singular: "rad"
                 summary: "{{fields.name}} – {{fields.price}}"
+                hint: "Alla rader i sektionen redigeras här, oavsett om sektionen visas i en eller två kolumner."
                 fields:
                   - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
                   - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
                   - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
+                  - label: "Kolumn (valfritt, endast vid Två kolumner)"
+                    name: "column"
+                    widget: "select"
+                    required: false
+                    hint: "Lämna tom för automatisk fördelning på två kolumner."
+                    options:
+                      - { label: "Vänster kolumn", value: "one" }
+                      - { label: "Höger kolumn", value: "two" }
           - label: "Dagens erbjudande"
             name: "offer"
             widget: "object"
