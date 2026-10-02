@@ -41,53 +41,54 @@ collections:
     label: "Meny"
     files:
       - file: "data/menu.json"
-        label: "Menyinnehåll"
+        label: "Menyinnehåll (sidan Meny)"
         name: "menu"
         format: "json"
         editor:
           preview: false
         fields:
-          - label: "Sektioner"
+          - label: "Menysektioner"
             name: "sections"
             widget: "list"
+            label_singular: "sektion"
+            summary: "{{fields.title}}"
+            hint: "Varje sektion är en rubrik på menyn (t.ex. Smörrebröd, Dryck). Klicka på en sektion för att redigera, dra för att ändra ordning, och använd 'Lägg till sektion' för en ny."
             fields:
-              - label: "Sektionstyp"
+              - label: "Utseende på sektionen"
                 name: "layout"
                 widget: "select"
+                default: "single_column"
+                hint: "Välj 'En kolumn' för en vanlig lista, eller 'Två kolumner' för att dela upp samma rader i två kolumner bredvid varandra. Raderna redigeras alltid på samma ställe."
                 options:
                   - { label: "Två kolumner", value: "two_columns" }
                   - { label: "En kolumn", value: "single_column" }
-              - { label: "Rubrik", name: "title", widget: "string" }
-              - label: "Kolumner (för tvåkolumnsektion)"
-                name: "columns"
-                widget: "list"
-                required: false
-                field:
-                  label: "Kolumn"
-                  name: "column"
-                  widget: "object"
-                  fields:
-                    - label: "Rader"
-                      name: "items"
-                      widget: "list"
-                      fields:
-                        - { label: "Namn", name: "name", widget: "string" }
-                        - { label: "Beskrivning", name: "description", widget: "string", required: false }
-                        - { label: "Pris", name: "price", widget: "string" }
-              - label: "Rader (för enkel sektion)"
+              - { label: "Sektionens rubrik", name: "title", widget: "string", hint: "T.ex. Smörrebröd eller Dryck." }
+              - label: "Maträtter / produkter"
                 name: "items"
                 widget: "list"
                 required: false
+                label_singular: "rad"
+                summary: "{{fields.name}} – {{fields.price}}"
+                hint: "Alla rader i sektionen redigeras här, oavsett om sektionen visas i en eller två kolumner."
                 fields:
-                  - { label: "Namn", name: "name", widget: "string" }
-                  - { label: "Beskrivning", name: "description", widget: "string", required: false }
-                  - { label: "Pris", name: "price", widget: "string" }
+                  - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
+                  - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
+                  - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
+                  - label: "Kolumn (valfritt, endast vid Två kolumner)"
+                    name: "column"
+                    widget: "select"
+                    required: false
+                    hint: "Lämna tom för automatisk fördelning på två kolumner."
+                    options:
+                      - { label: "Vänster kolumn", value: "one" }
+                      - { label: "Höger kolumn", value: "two" }
           - label: "Dagens erbjudande"
             name: "offer"
             widget: "object"
+            hint: "Rutan med lunch-deal som visas längst ned på menyn."
             fields:
               - { label: "Rubrik", name: "title", widget: "string" }
-              - { label: "Pris", name: "price", widget: "string" }
+              - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
               - { label: "Text", name: "description", widget: "text" }
 
   - name: "events"
