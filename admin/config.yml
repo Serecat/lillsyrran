@@ -41,53 +41,65 @@ collections:
     label: "Meny"
     files:
       - file: "data/menu.json"
-        label: "Menyinnehåll"
+        label: "Menyinnehåll (sidan Meny)"
         name: "menu"
         format: "json"
         editor:
           preview: false
         fields:
-          - label: "Sektioner"
+          - label: "Menysektioner"
             name: "sections"
             widget: "list"
+            label_singular: "sektion"
+            summary: "{{fields.title}}"
+            hint: "Varje sektion är en rubrik på menyn (t.ex. Smörrebröd, Dryck). Klicka på en sektion för att redigera, dra för att ändra ordning, och använd 'Lägg till sektion' för en ny."
             fields:
-              - label: "Sektionstyp"
+              - label: "Utseende på sektionen"
                 name: "layout"
                 widget: "select"
+                default: "single_column"
+                hint: "Välj 'En kolumn' för en vanlig lista, eller 'Två kolumner' för att dela upp raderna i två kolumner bredvid varandra."
                 options:
                   - { label: "Två kolumner", value: "two_columns" }
                   - { label: "En kolumn", value: "single_column" }
-              - { label: "Rubrik", name: "title", widget: "string" }
-              - label: "Kolumner (för tvåkolumnsektion)"
+              - { label: "Sektionens rubrik", name: "title", widget: "string", hint: "T.ex. Smörrebröd eller Dryck." }
+              - label: "Kolumner (fyll i endast om du valt Två kolumner)"
                 name: "columns"
                 widget: "list"
                 required: false
+                label_singular: "kolumn"
+                hint: "Lägg till två kolumner och fyll i maträtterna i varje."
                 field:
                   label: "Kolumn"
                   name: "column"
                   widget: "object"
                   fields:
-                    - label: "Rader"
+                    - label: "Maträtter / produkter"
                       name: "items"
                       widget: "list"
+                      label_singular: "rad"
+                      summary: "{{fields.name}} – {{fields.price}}"
                       fields:
-                        - { label: "Namn", name: "name", widget: "string" }
-                        - { label: "Beskrivning", name: "description", widget: "string", required: false }
-                        - { label: "Pris", name: "price", widget: "string" }
-              - label: "Rader (för enkel sektion)"
+                        - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
+                        - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
+                        - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
+              - label: "Maträtter / produkter (fyll i endast om du valt En kolumn)"
                 name: "items"
                 widget: "list"
                 required: false
+                label_singular: "rad"
+                summary: "{{fields.name}} – {{fields.price}}"
                 fields:
-                  - { label: "Namn", name: "name", widget: "string" }
-                  - { label: "Beskrivning", name: "description", widget: "string", required: false }
-                  - { label: "Pris", name: "price", widget: "string" }
+                  - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
+                  - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
+                  - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
           - label: "Dagens erbjudande"
             name: "offer"
             widget: "object"
+            hint: "Rutan med lunch-deal som visas längst ned på menyn."
             fields:
               - { label: "Rubrik", name: "title", widget: "string" }
-              - { label: "Pris", name: "price", widget: "string" }
+              - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
               - { label: "Text", name: "description", widget: "text" }
 
   - name: "events"
