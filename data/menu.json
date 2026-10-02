@@ -3,59 +3,60 @@
     {
       "layout": "two_columns",
       "title": "Smörrebröd",
-      "columns": [
+      "items": [
         {
-          "items": [
-          {
-            "name": "Räkor",
-            "description": "Ägg, caviar-ärt, majonnäs, riven pepparrot",
-            "price": "79 kr"
-          },
-          {
-            "name": "Rökt lax",
-            "description": "Asiatgurka, cavi-art, creme fraiche, picklade senapsfrön",
-            "price": "69 kr"
-          },
-          {
-            "name": "Panerad spättafilé",
-            "description": "Hemgjord remouladsås",
-            "price": "69 kr"
-          },
-          {
-            "name": "Inlagd sill",
-            "description": "Ägg, potatis, creme fraiche, lök, kapris",
-            "price": "59 kr"
-          },
-          {
-            "name": "Veterinärens nattamat",
-            "description": "Kalvleverpastej, saltkött, sky, lök",
-            "price": "65 kr"
-          },
-          {
-            "name": "Curry kyckling",
-            "description": "Currydressing, bacon",
-            "price": "65 kr"
-          },
-          {
-            "name": "Blå kornblomst",
-            "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
-            "price": "59 kr"
-          }
-          ]
+          "name": "Räkor",
+          "description": "Ägg, caviar-ärt, majonnäs, riven pepparrot",
+          "price": "79 kr",
+          "column": "one"
         },
         {
-          "items": [
-          {
-            "name": "Rostbiff",
-            "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
-            "price": "72 kr"
-          },
-          {
-            "name": "Salami & Brie",
-            "description": "Dansk salami med brieost, fikonmarmelad",
-            "price": "65 kr"
-          }
-          ]
+          "name": "Rökt lax",
+          "description": "Asiatgurka, cavi-art, creme fraiche, picklade senapsfrön",
+          "price": "69 kr",
+          "column": "one"
+        },
+        {
+          "name": "Panerad spättafilé",
+          "description": "Hemgjord remouladsås",
+          "price": "69 kr",
+          "column": "one"
+        },
+        {
+          "name": "Inlagd sill",
+          "description": "Ägg, potatis, creme fraiche, lök, kapris",
+          "price": "59 kr",
+          "column": "one"
+        },
+        {
+          "name": "Veterinärens nattamat",
+          "description": "Kalvleverpastej, saltkött, sky, lök",
+          "price": "65 kr",
+          "column": "one"
+        },
+        {
+          "name": "Curry kyckling",
+          "description": "Currydressing, bacon",
+          "price": "65 kr",
+          "column": "one"
+        },
+        {
+          "name": "Blå kornblomst",
+          "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
+          "price": "59 kr",
+          "column": "one"
+        },
+        {
+          "name": "Rostbiff",
+          "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
+          "price": "72 kr",
+          "column": "two"
+        },
+        {
+          "name": "Salami & Brie",
+          "description": "Dansk salami med brieost, fikonmarmelad",
+          "price": "65 kr",
+          "column": "two"
         }
       ]
     },

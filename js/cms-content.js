@@ -75,35 +75,57 @@
     }
   }
 
+  // Single canonical list: section.items. Legacy content stored items under
+  // section.columns[].items; those are mapped in (with a column hint) so nothing is lost.
+  function getSectionItems(section) {
+    var items = Array.isArray(section.items) ? section.items.slice() : [];
+    if (Array.isArray(section.columns)) {
+      section.columns.forEach(function (column, index) {
+        if (!column || !Array.isArray(column.items)) return;
+        column.items.forEach(function (item) {
+          var copy = {};
+          Object.keys(item).forEach(function (key) { copy[key] = item[key]; });
+          if (!copy.column) copy.column = index === 1 ? 'two' : 'one';
+          items.push(copy);
+        });
+      });
+    }
+    return items;
+  }
+
   function renderMenu(menuData) {
     var container = document.getElementById('menu-sections');
     if (!container || !menuData || !Array.isArray(menuData.sections)) return;
 
     var html = menuData.sections.map(function (section) {
       var heading = '<h2 class="menu-section-title">' + escapeHtml(section.title) + '</h2>';
+      var items = getSectionItems(section);
+      var isTwo = section.layout === 'two_columns' || section.layout === 'two';
 
-      if (section.layout === 'two_columns' && Array.isArray(section.columns)) {
-        var columnsHtml = section.columns.map(function (column) {
-          var items = column && Array.isArray(column.items) ? column.items : [];
-          return '<div class="menu-items">' + items.map(function (item) {
-            var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
-            return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
-          }).join('') + '</div>';
+      function itemHtml(item) {
+        var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
+        return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
+      }
+
+      if (isTwo) {
+        var hasAssignment = items.some(function (item) { return item.column === 'one' || item.column === 'two'; });
+        var left;
+        var right;
+        if (hasAssignment) {
+          left = items.filter(function (item) { return item.column !== 'two'; });
+          right = items.filter(function (item) { return item.column === 'two'; });
+        } else {
+          var half = Math.ceil(items.length / 2);
+          left = items.slice(0, half);
+          right = items.slice(half);
+        }
+        var columnsHtml = [left, right].map(function (col) {
+          return '<div class="menu-items">' + col.map(itemHtml).join('') + '</div>';
         }).join('');
-
         return '<div class="menu-section">' + heading + '<div class="menu-two-col">' + columnsHtml + '</div></div>';
       }
 
-      if (section.layout === 'single_column' && Array.isArray(section.items)) {
-        var itemsHtml = section.items.map(function (item) {
-          var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
-          return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
-        }).join('');
-
-        return '<div class="menu-section">' + heading + '<div class="menu-items">' + itemsHtml + '</div></div>';
-      }
-
-      return '';
+      return '<div class="menu-section">' + heading + '<div class="menu-items">' + items.map(itemHtml).join('') + '</div></div>';
     }).join('');
 
     container.innerHTML = html;
