@@ -1,18 +1,18 @@
 {
   "sections": [
     {
-      "layout": "single_column",
+      "layout": "two_columns",
       "title": "Smörrebröd 69 kr styck",
       "items": [
         {
           "name": "Räkor",
-          "description": "Ägg, caviarart, majonnäs, riven pepparrot",
-          "price": "0",
+          "description": "Ägg, cavi-art, majonnäs, riven pepparrot",
+          "price": "69 kr",
           "column": null
         },
         {
           "name": "Rökt lax",
-          "description": "Asiatgurka, cavi-art, creme fraiche, picklade senapsfrön",
+          "description": "Asiagurka, pepparrotsvisp, cavi-art",
           "price": "69 kr",
           "column": "one"
         },
@@ -25,37 +25,31 @@
         {
           "name": "Inlagd sill",
           "description": "Ägg, potatis, creme fraiche, lök, kapris",
-          "price": "59 kr",
+          "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Veterinärens nattamat",
-          "description": "Kalvleverpastej, saltkött, sky, lök",
-          "price": "65 kr",
-          "column": "one"
-        },
-        {
-          "name": "Curry kyckling",
-          "description": "Currydressing, bacon",
-          "price": "65 kr",
+          "description": " Leverpastej, saltkött, sky, lök",
+          "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Blå kornblomst",
           "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
-          "price": "59 kr",
+          "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Rostbiff",
           "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
-          "price": "72 kr",
+          "price": "69 kr",
           "column": "two"
         },
         {
           "name": "Salami & Brie",
           "description": "Dansk salami med brieost, fikonmarmelad",
-          "price": "65 kr",
+          "price": "69 kr",
           "column": "two"
         }
       ]
@@ -66,7 +60,7 @@
       "items": [
         {
           "name": "Kaffe",
-          "price": "37 kr"
+          "price": "28 kr"
         },
         {
           "name": "Te",
@@ -74,7 +68,7 @@
         },
         {
           "name": "Läsk / Lättöl",
-          "price": "25 kr"
+          "price": "22 kr"
         },
         {
           "name": "Alkoholfri öl",
@@ -93,18 +87,12 @@
     {
       "layout": "single_column",
       "title": "Glass",
-      "items": [
-        {
-          "name": "Hollanders hantverksglass",
-          "description": "Finns i flera olika smaker!",
-          "price": "55 kr"
-        }
-      ]
+      "items": []
     }
   ],
   "offer": {
     "title": "Dagens erbjudande",
     "price": "139 kr",
-    "description": "Två av dagens smörrebröd inkl. läsk/lättöl, kaffe och kaka. Gäller tisdag–fredag. Vid förbeställning gäller styckpris."
+    "description": "Två av dagens smörrebröd inkl. läsk/lättöl, kaffe och kaka. Gäller tisdag–fredag. Gäller per person."
   }
 }
