@@ -1,14 +1,14 @@
 {
   "sections": [
     {
-      "layout": "two_columns",
-      "title": "Smörrebröd",
+      "layout": "single_column",
+      "title": "Smörrebröd 69 kr styck",
       "items": [
         {
           "name": "Räkor",
           "description": "Ägg, caviarart, majonnäs, riven pepparrot",
-          "price": "69 kr",
-          "column": "one"
+          "price": "0",
+          "column": null
         },
         {
           "name": "Rökt lax",
