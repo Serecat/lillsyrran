@@ -30,19 +30,19 @@
         },
         {
           "name": "Veterinärens nattamat",
-          "description": " Leverpastej, saltkött, sky, lök",
+          "description": " Grov dansk pastej, saltkött, sky, lök",
           "price": "69 kr",
           "column": "one"
         },
         {
-          "name": "Blå kornblomst",
+          "name": "Blå kornblomstost",
           "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
           "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Rostbiff",
-          "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
+          "description": "Hemgjord remouladsås, rostad lök, pepparrot",
           "price": "69 kr",
           "column": "two"
         },
@@ -59,7 +59,7 @@
       "title": "Dryck",
       "items": [
         {
-          "name": "Kaffe",
+          "name": "Bryggkaffe",
           "price": "28 kr"
         },
         {
