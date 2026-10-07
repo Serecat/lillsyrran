@@ -2,7 +2,7 @@
   "sections": [
     {
       "layout": "two_columns",
-      "title": "Smörrebröd",
+      "title": "Smörrebröd 69 kr styck",
       "items": [
         {
           "name": "Räkor",
@@ -35,7 +35,7 @@
           "column": "two"
         },
         {
-          "name": "Blå kornblomst",
+          "name": "Blå kornblomstost",
           "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
           "column": "two"
         },
@@ -56,8 +56,8 @@
       "title": "Dryck",
       "items": [
         {
-          "name": "Kaffe",
-          "price": "38 kr"
+          "name": "Bryggkaffe",
+          "price": "28 kr"
         },
         {
           "name": "Te",
@@ -65,7 +65,7 @@
         },
         {
           "name": "Läsk / Lättöl",
-          "price": "25 kr"
+          "price": "22 kr"
         },
         {
           "name": "Alkoholfri öl",
