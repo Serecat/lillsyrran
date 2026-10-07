@@ -7,55 +7,46 @@
         {
           "name": "Räkor",
           "description": "Ägg, caviar-ärt, majonnäs, riven pepparrot",
-          "price": "79 kr",
           "column": "one"
         },
         {
           "name": "Rökt lax",
           "description": "Asiatgurka, cavi-art, creme fraiche, picklade senapsfrön",
-          "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Panerad spättafilé",
           "description": "Hemgjord remouladsås",
-          "price": "69 kr",
           "column": "one"
         },
         {
           "name": "Inlagd sill",
           "description": "Ägg, potatis, creme fraiche, lök, kapris",
-          "price": "59 kr",
           "column": "one"
         },
         {
           "name": "Veterinärens nattamat",
           "description": "Kalvleverpastej, saltkött, sky, lök",
-          "price": "65 kr",
-          "column": "one"
+          "column": "two"
         },
         {
           "name": "Curry kyckling",
           "description": "Currydressing, bacon",
-          "price": "65 kr",
-          "column": "one"
+          "column": "two"
         },
         {
           "name": "Blå kornblomst",
           "description": "Ekologisk dansk blåskimmelost, rädisor, fikonmarmelad",
-          "price": "59 kr",
-          "column": "one"
+          "column": "two"
         },
         {
           "name": "Rostbiff",
           "description": "Hemgjord remouladsås, rostad lök, riven pepparrot",
-          "price": "72 kr",
           "column": "two"
         },
         {
           "name": "Salami & Brie",
           "description": "Dansk salami med brieost, fikonmarmelad",
-          "price": "65 kr",
           "column": "two"
         }
       ]
@@ -89,22 +80,11 @@
           "price": "15 kr"
         }
       ]
-    },
-    {
-      "layout": "single_column",
-      "title": "Glass",
-      "items": [
-        {
-          "name": "Hollanders hantverksglass",
-          "description": "Finns i flera olika smaker!",
-          "price": "55 kr"
-        }
-      ]
     }
   ],
   "offer": {
     "title": "Dagens erbjudande",
     "price": "139 kr",
-    "description": "Två av dagens smörrebröd inkl. läsk/lättöl, kaffe och kaka. Gäller tisdag–fredag. Vid förbeställning gäller styckpris."
+    "description": "Två av dagens smörrebröd inkl. läsk/lättöl, kaffe och kaka.\nGäller tisdag - fredag och per person.\nDagens erbjudande gäller endast köp på plats och kan inte förbeställas"
   }
 }
