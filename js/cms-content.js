@@ -104,7 +104,8 @@
 
       function itemHtml(item) {
         var desc = item.description ? '<p class="menu-item-desc">' + escapeHtml(item.description) + '</p>' : '';
-        return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div><span class="menu-item-price">' + escapeHtml(item.price) + '</span></div>';
+        var price = item.price ? '<span class="menu-item-price">' + escapeHtml(item.price) + '</span>' : '';
+        return '<div class="menu-item"><div class="menu-item-info"><p class="menu-item-name">' + escapeHtml(item.name) + '</p>' + desc + '</div>' + price + '</div>';
       }
 
       if (isTwo) {

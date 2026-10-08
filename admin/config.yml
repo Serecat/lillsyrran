@@ -73,7 +73,7 @@ collections:
                 fields:
                   - { label: "Namn", name: "name", widget: "string", hint: "Namnet på rätten eller produkten." }
                   - { label: "Beskrivning (valfri)", name: "description", widget: "string", required: false, hint: "Kort beskrivning, t.ex. ingredienser." }
-                  - { label: "Pris", name: "price", widget: "string", hint: "T.ex. 69 kr" }
+                  - { label: "Pris", name: "price", widget: "string", required: false, hint: "T.ex. 69 kr" }
                   - label: "Kolumn (valfritt, endast vid Två kolumner)"
                     name: "column"
                     widget: "select"
