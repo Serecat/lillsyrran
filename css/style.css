@@ -312,8 +312,38 @@ h1, h2, h3, h4 {
   color: var(--color-white);
 }
 
+.christmas-announcement {
+  background: linear-gradient(135deg, #203b2d 0%, #31543e 55%, #263d2e 100%);
+  border-top: 4px solid #a33432;
+  border-bottom: 4px solid #a33432;
+}
+
+.christmas-announcement .section-label {
+  color: #e7c56e;
+}
+
 .christmas-announcement .section-title {
-  color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.christmas-announcement .divider {
+  background: #e7c56e;
+}
+
+.christmas-announcement .section-desc {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.christmas-announcement .btn-primary {
+  background-color: #e7c56e;
+  border-color: #e7c56e;
+  color: #1e120a;
+}
+
+.christmas-announcement .btn-primary:hover {
+  background-color: #a33432;
+  border-color: #a33432;
+  color: var(--color-white);
 }
 
 .christmas-menu-section {
