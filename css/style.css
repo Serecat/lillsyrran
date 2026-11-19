@@ -318,16 +318,17 @@ h1, h2, h3, h4 {
 
 .christmas-menu-section {
   padding-top: var(--space-lg);
+  background: linear-gradient(125deg, #f6e8e4 0%, #eaf1e9 52%, #f6e8e4 100%);
 }
 
 .christmas-menu {
-  max-width: 860px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: clamp(var(--space-md), 5vw, var(--space-lg));
   background-color: var(--color-white);
-  border: 1px solid var(--color-accent);
+  border: 2px solid #a33432;
   border-radius: var(--radius);
-  box-shadow: 0 8px 28px rgba(44, 26, 14, 0.08);
+  box-shadow: 0 10px 32px rgba(44, 26, 14, 0.12);
   text-align: center;
 }
 
@@ -336,15 +337,21 @@ h1, h2, h3, h4 {
 }
 
 .christmas-menu-image {
+  display: block;
   width: 100%;
+  max-width: 1024px;
   height: auto;
-  margin-top: var(--space-md);
+  margin: var(--space-md) auto 0;
   border-radius: var(--radius);
 }
 
-.aktuellt-home-section {
-  border-top: 3px solid #a33432;
-  border-bottom: 3px solid #315c43;
+.aktuellt-home-section [data-events-teaser] {
+  padding: clamp(var(--space-md), 5vw, var(--space-lg));
+  background: linear-gradient(125deg, #f6e8e4 0%, #eaf1e9 52%, #f6e8e4 100%);
+  border: 2px solid #315c43;
+  border-left: 5px solid #a33432;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 32px rgba(44, 26, 14, 0.1);
 }
 
 .aktuellt-home-section .section-label {
