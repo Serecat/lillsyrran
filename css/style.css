@@ -297,6 +297,11 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
 }
 
+.page-hero-christmas {
+  background-image: linear-gradient(135deg, #1d2b22 0%, #314638 55%, #1d2b22 100%);
+  border-bottom: 3px solid var(--color-accent);
+}
+
 /* ==============================================
    Sections
    ============================================== */
@@ -305,6 +310,36 @@ h1, h2, h3, h4 {
 .section-dark {
   background-color: var(--color-bg-dark);
   color: var(--color-white);
+}
+
+.christmas-announcement .section-title {
+  color: var(--color-primary);
+}
+
+.christmas-menu-section {
+  padding-top: var(--space-lg);
+}
+
+.christmas-menu {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(var(--space-md), 5vw, var(--space-lg));
+  background-color: var(--color-white);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(44, 26, 14, 0.08);
+  text-align: center;
+}
+
+.christmas-menu .section-title {
+  margin-bottom: var(--space-sm);
+}
+
+.christmas-menu-image {
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-md);
+  border-radius: var(--radius);
 }
 
 .section-header {

@@ -157,14 +157,12 @@
       : [];
     var hasEvents = events.length > 0;
     var container = document.getElementById('events-list');
-    var eventLinks = document.querySelectorAll('a[href="aktuellt.html"]');
     var teasers = document.querySelectorAll('[data-events-teaser]');
-    var eventsPages = document.querySelectorAll('[data-events-page]');
     var eventsCtas = document.querySelectorAll('[data-events-cta]');
+    var eventsSections = document.querySelectorAll('[data-events-list-section]');
 
-    eventLinks.forEach(function (link) {
-      var listItem = link.closest('li');
-      setHidden(listItem || link, !hasEvents);
+    eventsSections.forEach(function (section) {
+      setHidden(section, !hasEvents);
     });
     eventsCtas.forEach(function (cta) {
       setHidden(cta, !hasEvents);
@@ -172,12 +170,6 @@
     teasers.forEach(function (teaser) {
       setHidden(teaser, !hasEvents);
     });
-    eventsPages.forEach(function (eventsPage) {
-      setHidden(eventsPage, !hasEvents);
-    });
-    if (!hasEvents && /(?:^|\/)aktuellt\.html$/.test(window.location.pathname)) {
-      window.location.replace('index.html');
-    }
     if (!container) return;
 
     container.innerHTML = events.map(function (event) {
@@ -196,7 +188,6 @@
     document.getElementById('events-list') ||
     document.querySelector('a[href="aktuellt.html"]') ||
     document.querySelector('[data-events-teaser]') ||
-    document.querySelector('[data-events-page]') ||
     document.querySelector('[data-events-cta]');
 
   var loaders = [];

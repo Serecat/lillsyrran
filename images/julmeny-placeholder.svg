@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">Julmeny med smörrebröd</title>
+  <desc id="description">Tillfällig platshållare i väntan på den uppladdade menybilden.</desc>
+  <rect width="1200" height="800" fill="#faf7f2"/>
+  <rect x="28" y="28" width="1144" height="744" rx="8" fill="none" stroke="#c8962b" stroke-width="3"/>
+  <path d="M600 220v-70m0 70-62-35m62 35 62-35m-62 35v70m0-70-62 35m62-35 62 35" fill="none" stroke="#314638" stroke-linecap="round" stroke-width="5"/>
+  <circle cx="600" cy="145" r="10" fill="#c8962b"/>
+  <circle cx="538" cy="185" r="10" fill="#c8962b"/>
+  <circle cx="662" cy="185" r="10" fill="#c8962b"/>
+  <circle cx="600" cy="290" r="10" fill="#c8962b"/>
+  <circle cx="538" cy="325" r="10" fill="#c8962b"/>
+  <circle cx="662" cy="325" r="10" fill="#c8962b"/>
+  <text x="600" y="430" text-anchor="middle" fill="#2c1a0e" font-family="Georgia, serif" font-size="54">Julmeny med smörrebröd</text>
+  <text x="600" y="500" text-anchor="middle" fill="#7a6355" font-family="Arial, sans-serif" font-size="26">Tillfällig bildplatshållare</text>
+</svg>
