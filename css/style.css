@@ -297,6 +297,11 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
 }
 
+.page-hero-christmas {
+  background-image: linear-gradient(135deg, #1d2b22 0%, #314638 55%, #1d2b22 100%);
+  border-bottom: 3px solid var(--color-accent);
+}
+
 /* ==============================================
    Sections
    ============================================== */
@@ -305,6 +310,91 @@ h1, h2, h3, h4 {
 .section-dark {
   background-color: var(--color-bg-dark);
   color: var(--color-white);
+}
+
+.christmas-announcement {
+  background: linear-gradient(135deg, #203b2d 0%, #31543e 55%, #263d2e 100%);
+  border-top: 4px solid #a33432;
+  border-bottom: 4px solid #a33432;
+}
+
+.christmas-announcement .section-label {
+  color: #e7c56e;
+}
+
+.christmas-announcement .section-title {
+  color: var(--color-white);
+}
+
+.christmas-announcement .divider {
+  background: #e7c56e;
+}
+
+.christmas-announcement .section-desc {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.christmas-announcement .btn-primary {
+  background-color: #e7c56e;
+  border-color: #e7c56e;
+  color: #1e120a;
+}
+
+.christmas-announcement .btn-primary:hover {
+  background-color: #a33432;
+  border-color: #a33432;
+  color: var(--color-white);
+}
+
+.christmas-menu-section {
+  padding-top: var(--space-lg);
+  background: linear-gradient(125deg, #f6e8e4 0%, #eaf1e9 52%, #f6e8e4 100%);
+}
+
+.christmas-menu {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(var(--space-md), 5vw, var(--space-lg));
+  background-color: var(--color-white);
+  border: 2px solid #a33432;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 32px rgba(44, 26, 14, 0.12);
+  text-align: center;
+}
+
+.christmas-menu .section-title {
+  margin-bottom: var(--space-sm);
+}
+
+.christmas-menu-image {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+  margin: var(--space-md) auto 0;
+  border-radius: var(--radius);
+}
+
+.aktuellt-home-section [data-events-teaser] {
+  padding: clamp(var(--space-md), 5vw, var(--space-lg));
+  background: linear-gradient(125deg, #f6e8e4 0%, #eaf1e9 52%, #f6e8e4 100%);
+  border: 2px solid #315c43;
+  border-left: 5px solid #a33432;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 32px rgba(44, 26, 14, 0.1);
+}
+
+.aktuellt-home-section .section-label {
+  color: #a33432;
+}
+
+.aktuellt-home-section .divider {
+  background: linear-gradient(90deg, #a33432 0 50%, #315c43 50%);
+}
+
+.aktuellt-home-section .btn-outline {
+  border-color: #315c43;
+  color: #315c43;
 }
 
 .section-header {
